@@ -71,38 +71,45 @@ with st.sidebar:
         )
 
     with st.expander("🛫 Datos de Pista", expanded=True):
-        LRP = st.number_input(
-            "Longitud de pista (m)",
-            min_value=0.0,
-            max_value=5000.0,
-            value=3102.0,
-            step=10.0,
-            format="%.1f"
-        )
-        H = st.number_input(
-            "Altitud (m)",
-            min_value=0.0,
-            max_value=5000.0,
-            value=73.0,
-            step=10.0,
-            format="%.1f"
-        )
-        TA = st.number_input(
-            "Temperatura (°C)",
-            min_value=-50.0,
-            max_value=60.0,
-            value=30.0,
-            step=1.0,
-            format="%.1f"
-        )
-        P = st.number_input(
-            "Pendiente (%)",
-            min_value=-10.0,
-            max_value=10.0,
-            value=0.65,
-            step=0.01,
-            format="%.2f"
-        )
+        col1, col2 = st.columns(2)
+    
+        with col1:
+            LRP = st.number_input(
+                "Longitud de pista (m)",
+                min_value=0.0,
+                max_value=5000.0,
+                value=3102.0,
+                step=10.0,
+                format="%.1f"
+            )
+            H = st.number_input(
+                "Altitud (m)",
+                min_value=0.0,
+                max_value=5000.0,
+                value=73.0,
+                step=10.0,
+                format="%.1f"
+            )
+        with col2:
+            TA = st.number_input(
+                "Temperatura (°C)",
+                min_value=-50.0,
+                max_value=60.0,
+                value=30.0,
+                step=1.0,
+                format="%.1f"
+            )
+            P = st.number_input(
+                "Pendiente (%)",
+                min_value=-10.0,
+                max_value=10.0,
+                value=0.65,
+                step=0.01,
+                format="%.2f"
+            )
+
+        
+       
 
     procesar = st.button("🔍 Analizar", use_container_width=True)
 
